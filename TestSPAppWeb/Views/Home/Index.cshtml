@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/taxpicker")
+<div class="App-content">
+    <div class="ms-Grid">
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-lg6 ms-u-xl4">
+                <div class="ms-Table">
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell">
+                            <label class="ms-Label is-required">
+                                Select Term
+                            </label>
+                            @Html.Hidden("taxPickerCars")
+                        </span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <label id="lblTermID" class="ms-Label">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-lg6 ms-u-xl4">
+                <div class="ms-Table">
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell">
+                            <label class="ms-Label is-required">
+                                Copy Term to:
+                            </label>
+                            @Html.Hidden("taxPickerTermTo")
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md ms-u-lg6 ms-u-xl4">
+                <label class="ms-Label is-required">
+                    Alow Children:
+                </label>
+            </div>
+            <div class="ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-lg6 ms-u-xl4">
+                @Html.CheckBox("chkChilds")
+            </div>
+        </div>
+        <div class="ms-Grid-row">
+            <button class="ms-Button ms-Button--primary" onclick="addTermTo()"><span class="ms-Button-label">Copy</span></button>
+        </div>
+    </div>
+
+</div>
