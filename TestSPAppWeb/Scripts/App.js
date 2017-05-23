@@ -79,13 +79,7 @@ function addTermTo() {
     if ($('input[name="chkChilds"]:checked').length > 0) {
         var terms = sourceTerm.get_terms();  //load child Terms
         context.load(terms);
-        //for (var i = 0; i < terms.get_count() ; i++) {
-        //    var term = terms.getItemAtIndex(i);
-        //    newTermchilds = newTerm.createTerm(term.get_name(), 1033, newGuid());
-        //    context.load(newTermchilds);
-        //}
     }
-    //targetTerm.reuseTerm(sourceTerm, true);
     context.executeQueryAsync(
         function () {
             alert('Copy term has been created');
@@ -97,7 +91,11 @@ function addTermTo() {
                     newTermchilds = newTerm.createTerm(term.get_name(), 1033, newGuid());
                     context.load(newTermchilds);
                 }
-                context.executeQueryAsync(function () { alert('Copy term childs has been created'); }, function (sender, args) { alert(args.get_message()); });
+                context.executeQueryAsync(function () {
+                    alert('Copy term childs has been created');
+                }, function (sender, args) {
+                    alert(args.get_message());
+                });
             }
 
 
